@@ -4,7 +4,7 @@ const key = "cf161c626e7d1da32cd590f1ca562efb";
 let weatherData, userInput; 
 
 const $title = $("#title");
-const $year =  $("#year");
+const $weatherIcon = $(".weather-icon");
 const $temperatureValue = $("#temperature-value");
 const $input = $("input[type='text']");
 
@@ -12,7 +12,7 @@ $("form").on("submit", handleGetData);
 
 function handleGetData(event) {
     event.preventDefault();
-
+    
     
     userInput = $input.val();
     $.ajax({
@@ -20,17 +20,25 @@ function handleGetData(event) {
     }).then(
         (data) => {
             weatherData = data;
+            
             console.log("DATA", data);
             render();
+            displayWeather();
         },
         (error) => {
             console.log("ERROR", error);
         }
-    ); 
+    ) 
 }
+
 
 
 function render() {
-    $temperatureValue.html(weatherData.main.temp);
-    
+    const math = Math.floor(weatherData.main.temp);
+    $temperatureValue.html(math);
 }
+
+ function displayWeather () {
+     $weatherIcon.html(`<img src="images/${weatherData.weather[0].icon}.png">`)
+
+ }

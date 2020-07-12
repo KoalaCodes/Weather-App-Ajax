@@ -4,27 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/style.css">  
-    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@500&display=swap" rel="stylesheet"> 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script defer src="./js/script.js"></script>
     
     <title>Weather App</title>
 </head>
-<body>
-    <div class="container">
-        <form>
-            <input type="text" placeholder="Type in city"/>
-            <input type="submit" value="Get Weather Info" />
-        </form>
-        <div class="app-title"><p></p></div>
-        <div class="notification"></div>
-        <div class="weather=container">
-            <div > <P id="temperature-value">°</P> </div>
-            <div class="weather-icon"><img src="images\sun-icon-01.png"></img></div>
-            <div class="location"><p>-</p></div>
-        </div>
-
-    </div>
     
-</body>
+    <body>
+        <div class="container">
+            <h1 class="app-title">Weather</h1>
+                <form>
+                    <input class="input"type="text" placeholder="Type in city"/>
+                    <input type="submit" value="Get Weather Info" />
+                </form>
+                
+                <div class="notification"></div>
+                <div class="weather=container">
+                <div > <P id="temperature-value">°</P></div>
+                <div></div>
+                <div class="weather-icon"><img src="images\01d.png"></div>
+                <div class="location"><p></p></div>
+            
+
+        </div>
+        
+    </body>
 </html>
